@@ -14,35 +14,31 @@ class Solution(object):
             return list2
         elif not list2:
             return list1
-        head=ListNode()
-        tail=head
-
+    
         if list1.val<list2.val:
-            tail.val=list1.val
+            head=list1
             list1=list1.next
         else:
-            tail.val=list2.val
+            head=list2
             list2=list2.next
+        tail=head
 
         while list1 and list2:
-            tail.next=ListNode()
-            tail=tail.next
             if list1.val<list2.val:
-                tail.val=list1.val
+                tail.next=list1
                 list1=list1.next
             else:
-                tail.val=list2.val
+                tail.next=list2
                 list2=list2.next
+            tail=tail.next
             
             
         while list1:
-            tail.next=ListNode()
-            tail=tail.next
-            tail.val=list1.val            
+            tail.next=list1           
             list1=list1.next
-        while list2:
-            tail.next=ListNode()
             tail=tail.next
-            tail.val=list2.val
+        while list2:
+            tail.next=list2
             list2=list2.next
+            tail=tail.next
         return head
