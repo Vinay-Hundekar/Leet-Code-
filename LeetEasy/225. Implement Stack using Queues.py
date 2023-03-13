@@ -18,7 +18,7 @@ class MyStack(object):
         """
         :rtype: int
         """
-        return self.stack.pop(len(self.stack)-1)
+        return self.stack.pop()
         
 
     def top(self):
