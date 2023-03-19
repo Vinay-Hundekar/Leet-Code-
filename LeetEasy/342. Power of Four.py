@@ -10,7 +10,7 @@ class Solution(object):
         if n==1:
             return True
         # IF n==0 , return False
-        elif n=0:
+        elif n==0:
             return False
         # If n is multipule of 4, than perform n>>2(bitmanipulation)
         # because n>>2 is same as n//4, but faster
